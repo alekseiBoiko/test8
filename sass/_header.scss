@@ -1,0 +1,41 @@
+.header {
+    width: 100%;
+    // margin: 3rem 0;
+    color: color(header-color);
+    background-color: color(header-bg);
+
+    .header-holder {
+        width: 100%;
+        min-height: 7rem;
+        padding: 0.5rem 0;
+
+        @include flex(unset, unset, space-between, center);
+    }
+}
+
+.header_fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: color(header-bg_fixed);
+}
+
+.logo {
+    padding: 0.5rem 1rem;
+    font-size: font-size(logo);
+    font-weight: 600;
+    color: color(logo-color);
+    background-color: color(logo-bg);
+    border: 5px solid color(logo-border);
+
+    @include transition(color);
+
+    &::first-letter {
+        color: $orange;
+    }
+
+    &:hover {
+        color: color(logo-color_hovered);
+    }
+}

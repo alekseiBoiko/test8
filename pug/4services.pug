@@ -1,0 +1,21 @@
+section.services-section
+    .section-width-holder
+        .section-name-holder
+            h1.section__title
+                span services
+                span we provide
+            p.section__text Lorem ipsum dolor sit amet consectetur adipisicing elit Maiores fuga provident Libero.
+        .section-info-holder 
+            ul.services-list 
+                - for (var i=1;i<5;i++)
+                    li.services-item
+                    img.services-item__img(src=`images/services${i}.png` alt=`services${i}`)
+            .services-description-holder
+                h2.services-description__title
+                .services-description__line 
+                p.services-description__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus earum totam ad sint error porro. Consectetur, sunt, aperiam. Magni rem optio distinctio illum consequuntur delectus nulla illo aperiam itaque cumque.
+                p.services-description__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel officia vitae eveniet quam rem unde facilis.
+                button.btn_services + Know more 
+            .service-img-holder
+                img.services__img(src=`images/services${i}.png` alt=`services${i}`)
+                    

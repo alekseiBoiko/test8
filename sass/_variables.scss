@@ -1,0 +1,136 @@
+$orange: #fc6f4e;
+$gray: #acabab;
+$red: #C9453B;
+$yellow: #FFC700;
+$lime: #00ff00;
+
+$socialColors: (
+	FB: darkslateblue,
+	insta: purple,
+	twitter: skyblue,
+	linkedin: black
+);
+
+$colors: (
+	body-bg: white,
+	body-color: #626262,
+	header-bg: none,
+	header-color: inherit,
+	header-bg_fixed: #fbfbfb,
+	burger-bg: #706b73,
+	burger-bg_hovered: $orange,
+	logo-bg: none,
+	logo-color: inherit,
+	logo-color_hovered: $orange,
+	logo-border: #706b73,
+	section-bg: #fbfbfb,
+	welcome-bg: #f5f5f5,
+	contact-form-bg: white,
+	input-border: #c7c7c7,
+	process-item-color: white,
+	process-bg_1: #4eb2f7,
+	process-bg_2: #c049f8,
+	process-bg_3: #817eff,
+	process-bg_4: #f74770,
+	imgHolder-bg: #ff5c36,
+	imgHolder-bg_hovered: #fff3f0,
+	btn-color: #626262,
+	btn-input-bg: $orange,
+	btn-input-color: white,
+	footer-bg: #f7f7f7,
+	footer-color: black,
+	social-color: white,
+	social-bg: $orange,
+	social-bg_hovered: #d3d3d3
+);
+
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+$fonts: (
+	open: ('Open Sans', sans-serif),
+	gelsource: ('Source Sans Pro', sans-serif),
+	awesome: ("Font Awesome 5 Free")
+);
+
+@function font($key) {
+	@if map-has-key($fonts, $key) {
+	  @return map-get($fonts, $key);
+	}
+	@warn "Unknown `#{$key}` in $fonts.";
+	@return null;
+}
+
+$font-sizes: (
+	h1: 3.125rem,
+	h2: 1.875rem,
+	h3: 1.25rem,
+	h4: 1rem,
+	logo: 2.375rem
+);
+
+@function font-size($key) {
+	@if map-has-key($font-sizes, $key) {
+	  @return map-get($font-sizes, $key);
+	}
+	@warn "Unknown `#{$key}` in $font-sizes";
+	@return null;
+}
+
+$borders: (
+	light-gray: 2px solid color(input-border)
+);
+
+@function border($key) {
+	@if map-has-key($borders, $key) {
+	  @return map-get($borders, $key);
+	}
+	@warn "Unknown `#{$key}` in $borders";
+	@return null;
+}
+
+$materialBorder: 0 10px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.25);
+// usage: @include transition(opacity visibility);
+@mixin transition (
+	$properties: all,
+	$duration: 0.5s,
+	$method: ease,
+	$delay: 0s) {
+	$value: ();
+
+    @each $property in $properties {		
+        @if length($value) > 0 {
+			$value: append($value, unquote(",") #{$property} $duration $method $delay);
+		}
+        @else {
+			$value: append($value, #{$property} $duration $method $delay);
+		}
+	}
+	transition: $value;
+}
+
+// usage: @include flex(wrap, null, center, center);
+@mixin flex($wrap: unset, $direction: normal, $justify: normal, $align: normal) {
+	display: flex;
+	@include flex-wrap($wrap);
+  	@include flex-direction($direction);
+  	@include flex-justify($justify);
+  	@include flex-align($align);
+}
+@mixin flex-direction($direction: normal) {
+ flex-direction: $direction;
+}
+@mixin flex-align($align: normal) {
+ align-items: $align;
+}
+@mixin flex-justify($justify: normal) {
+	justify-content: $justify;
+}
+@mixin flex-wrap($wrap: normal) {
+	flex-wrap: $wrap;
+}

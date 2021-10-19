@@ -1,0 +1,58 @@
+- 
+    var team = [
+        {
+            name: 'Bedi Manos',
+            position: 'UI/UX Parena', 
+            twitter: 'manos', 
+            facebook: 'manos'
+        },
+        {
+            name: 'Al Rayhan',
+            position: 'UI/UX Designer', 
+            twitter: 'rayhan', 
+            facebook: 'rayhan'
+        },
+        {
+            name: 'Ali Sayed',
+            position: 'UI/UX Designer', 
+            twitter: 'sayed', 
+            facebook: 'sayed'
+        }
+    ];
+
+mixin teamList (list = [])
+    ul(class=`team-list`)
+        each i in list
+            li(class=`team-item`)
+                .team-item-img-holder 
+                .team-item-info_short
+                    h2.team-item__name #{i.name}
+                    .team-item__position #{i.position}
+                .team-item-info
+                    ul.team-item-skills-list 
+                        li.team-item-skill UI/UX  Design 
+                        li.team-item-skill English
+                        li.team-item-skill Communication
+                    .team-item-info_short
+                        h2.team-item__name #{i.name}
+                        .team-item__position #{i.position}
+                    ul.team-item-socials-list
+                        li.team-item-socials-item   
+                            a(href=`twitter.com/${i.twitter}` class='team-item-socials-link')
+                                i.fab.fa-twitter
+                        li.team-item-socials-item   
+                            a(href=`facebook.com/${i.facebook}` class='team-item-socials-link')
+                                i.fab.fa-facebook-f 
+                        li.team-item-socials-item   
+                            a(href=`twitter.com/${i.twitter}` class='team-item-socials-link')
+                                i.fab.fa-twitter
+
+section.team-section
+    .section-width-holder
+        .section-name-holder
+            h1.section__title
+                span team
+                span Chinen & Skills
+            p.section__text Lorem ipsum dolor sit amet consectetur adipisicing elit Maiores fuga provident Libero.
+        .section-info-holder 
+            +teamList(team)

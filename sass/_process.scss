@@ -1,0 +1,30 @@
+.process {
+    &-list {
+        @include flex(wrap,unset,space-between,unset);
+    }
+
+    &-item {
+        position: relative;
+        width: 23.5%;
+        padding: 3.4375rem 2rem;
+        color: color(process-item-color);
+
+        @include flex(unset,column,flex-start,center);
+
+        .fas {
+            font-size: 3rem;
+        }
+    }
+
+    &__title {
+        padding-top: 1rem;
+    }
+}
+
+@for $i from 1 through 4 {
+    .process-item_#{$i} {
+        background-color: color(process-bg_#{$i});
+
+        @extend .process-item;
+    }
+}

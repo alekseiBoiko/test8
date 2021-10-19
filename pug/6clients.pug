@@ -1,0 +1,40 @@
+- 
+    var clientsReview = [
+        {
+            name: 'Kita Say',
+            position: 'HK Director', 
+            review: '“This was my first time renting from car rental. The service rep help me find the best rental to suit my needs. I will definitely rent with this company again”'
+        },
+        {
+            name: 'Al Rayhan',
+            position: 'UX Director', 
+            review: '“This was my first time renting from car rental. The service rep help me find the best rental to suit my needs. I will definitely rent with this company again”'
+        },
+        {
+            name: 'Ali Sayed',
+            position: 'UI/UX Designer', 
+            review: '“This was my first time renting from car rental. The service rep help me find the best rental to suit my needs. I will definitely rent with this company again”'
+        }
+    ];
+
+mixin clientsReview (list = [])
+    ul.review-list
+        each i in list
+            li.review-item
+                .review-img-holder  
+                    .review-information-holder 
+                        p.review__text #{i.review}
+                        .review__raty 
+                        .review-author-holder   
+                            span.review-author-name #{i.name}
+                            span.review-author-position #{i.position}
+
+section.clients-section
+    .section-width-holder
+        .section-name-holder
+            h1.section__title
+                span clients
+                span said
+            p.section__text Lorem ipsum dolor sit amet consectetur adipisicing elit Maiores fuga provident Libero.
+        +clientsReview
+         

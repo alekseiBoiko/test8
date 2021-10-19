@@ -1,0 +1,18 @@
+section.welcome-section
+    include header
+    .section-width-holder
+        .section-name-holder
+            h1.section__title
+                span smart 
+                span agency landign page
+            p.section__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, fuga provident. Libero magni quibusdam labore ad iste saepe hic, maxime qui ipsum tempore beatae, volu tomi ptates doloremque rerum aspernatur dolorum at!
+        form.form_contact(action='#' method='post' )
+            h3.section__title
+                span send
+                span message
+            input.input_custom(type='text' name='Name' required='true' placeholder="Your Name")
+            input.input_custom(type='mail' name='Email' required='true' placeholder="Your E-Mail")
+            textarea.textarea_custom.input_custom(required='' placeholder="Your Message")
+            button.btn_form 
+                span Send Message
+                i.fas.fa-arrow-right
