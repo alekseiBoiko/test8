@@ -1,0 +1,99 @@
+.team {
+    &-list {
+        margin: 0 -2rem -2rem 0;
+
+        @include flex(wrap, unset, space-between, unset);
+    }
+
+    &-item {
+        position: relative;
+        min-width: 30%;
+        height: 27.875rem;
+        padding-bottom: 1rem;
+        margin: 0 2rem 2rem 0;
+        background-color: color(imgHolder-bg);
+
+        @include flex(unset, column, flex-end, center);
+        @include transition(background-color);
+
+        &:hover {
+            background-color: color(imgHolder-bg_hovered);
+
+            .team-item {
+                &-info {
+                    position: unset;
+                    left: 0;
+                    width: 100%;
+                    background-color: transparent;
+                    box-shadow: none;
+                    transform: none;
+                }
+
+                &__position {
+                    color: $orange;
+                }
+
+                &-skills-list {
+                    display: block;
+                }
+            }
+        }
+
+        &-skills {
+            &-list {
+                display: none;
+                width: 9.5rem;
+            }
+
+            &-item {
+                padding-bottom: 0.5rem;
+                margin-bottom: 1rem;
+                font-size: font-size(skill);
+                text-align: center;
+                text-transform: capitalize;
+                border-bottom: 4px solid;
+                border-image-source: linear-gradient(to right, color(imgHolder-bg) 80%, color(body-color) 20%);
+                border-image-slice: 1;
+            }
+        }
+
+        &-info {
+            position: absolute;
+            right: 0;
+            bottom: -0.75rem;
+            left: 50%;
+            width: 86%;
+            padding: 1rem;
+            background-color: color(body-bg);
+            box-shadow: $materialBorder;
+            transform: translateX(-50%);
+        }
+
+        &__name, &__position {
+            width: 100%;
+            text-align: center;
+        }
+
+        &__name {
+            padding-bottom: 1rem;
+        }
+
+        &-socials {
+            &-list {
+                margin-right: -1rem;
+
+                @include flex(unset, unset, center, unset);
+            }
+
+            &-item {
+                margin-right: 1rem;
+
+                &:hover {
+                    .fab {
+                        color: color(imgHolder-bg);
+                    }
+                }
+            }
+        }
+    }
+}

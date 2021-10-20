@@ -1,0 +1,55 @@
+.review {
+    &-item {
+        height: 20rem;
+        padding-bottom: 1rem;
+        margin-right: 2rem;
+
+        @include flex(unset,unset,unset,flex-end);
+    }
+
+    &-information-holder {
+        position: relative;
+        padding: 5.625rem 3.375rem 2.375rem;
+        border: border(light-gray);
+
+        @include flex(unset,column,unset,center);
+        @include transition(box-shadow);
+
+        &:hover {
+            box-shadow: $materialBorder;
+        }
+    }
+
+    &-img-holder {
+        position: absolute;
+        z-index: 1;
+        background-color: color(body-bg);
+        top: -3.1rem;
+        right: 0;
+		bottom: 0;
+		left: 50%;
+        width: 6.2rem;
+        height: 6.2rem;
+        border: border(light-gray);
+        border-radius: 50%;
+		transform: translateX(-50%);
+    }
+
+    &__text {
+        text-align: center;
+    }
+
+    &__raty {
+        height: 1rem;
+        margin: 1rem 0;
+
+        img {
+            object-fit: contain;
+            height: 100%;
+        }
+    }
+
+    &__author-position {
+        font-style: italic;
+    }
+}

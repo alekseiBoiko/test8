@@ -35,23 +35,34 @@ h4 {
     font-size: font-size(h4);
 }
 
-// .information-holder {
-//     width: 100%;
-//     margin: 9.3rem 0;
-
-//     @include flex(null,column,left,center);
-// }
+h1, h2, h3 {
+    text-transform: capitalize;
+}
 
 .section {
+    &_gray {
+        background-color: color(section-bg);
+    }
+
     &-width-holder {
-        width: 1138px;
+        width: holder(main);
         margin: 0 auto;
+
+        &_padding-bottom {
+            padding-bottom: 11.25rem;
+
+            @extend .section-width-holder;
+        }
     }
 
     &-name-holder {
-        width: 46.875rem;
+        width: holder(title);
         padding: 9rem 0 7.125rem;
         margin: 0 auto;
+    }
+
+    &-info-holder {
+        @include flex(unset,unset,space-between,unset);
     }
 
     &__title, &__text {
@@ -60,9 +71,7 @@ h4 {
     }
 
     &__title {
-        // margin-bottom: 1rem;
         font-weight: 600;
-        text-transform: capitalize;
 
         span:first-child {
             margin-right: 0.5rem;
@@ -75,26 +84,8 @@ h4 {
     }
 }
 
-.text-block {
-    font-size: 1.125rem;
-    line-height: 160%;
-}
-
 .item-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
-.img_rounded {
-    @extend .item-img;
-    border-radius: 10px;
-}
-
-// .mail__link {
-//     @include transition(box-shadow);
-
-//     &:hover {
-//         box-shadow: $redUnderline;
-//     }
-// }

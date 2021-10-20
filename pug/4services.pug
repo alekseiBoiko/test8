@@ -1,5 +1,5 @@
 section.services-section
-    .section-width-holder
+    .section-width-holder_padding-bottom
         .section-name-holder
             h1.section__title
                 span services
@@ -9,13 +9,12 @@ section.services-section
             ul.services-list 
                 - for (var i=1;i<5;i++)
                     li.services-item
-                    img.services-item__img(src=`images/services${i}.png` alt=`services${i}`)
+                        img.services-item__img(src=`images/services${i}.png` alt=`services${i}`)
             .services-description-holder
-                h2.services-description__title
-                .services-description__line 
+                h2.services-description__title Modern App Design
                 p.services-description__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus earum totam ad sint error porro. Consectetur, sunt, aperiam. Magni rem optio distinctio illum consequuntur delectus nulla illo aperiam itaque cumque.
                 p.services-description__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel officia vitae eveniet quam rem unde facilis.
-                button.btn_services + Know more 
-            .service-img-holder
-                img.services__img(src=`images/services${i}.png` alt=`services${i}`)
+                button.btn + Know more 
+            .services-img-holder
+                img.services__img(src=`images/apple.png` alt=`services${i}`)
                     

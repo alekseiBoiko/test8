@@ -34,13 +34,14 @@ $colors: (
 	process-bg_4: #f74770,
 	imgHolder-bg: #ff5c36,
 	imgHolder-bg_hovered: #fff3f0,
+	btn-bg: white,
 	btn-color: #626262,
 	btn-input-bg: $orange,
 	btn-input-color: white,
-	footer-bg: #f7f7f7,
-	footer-color: black,
+	footer-bg: #f5f5f5,
+	footer-color: inherit,
 	social-color: white,
-	social-bg: $orange,
+	social-bg: #c7c7c7,
 	social-bg_hovered: #d3d3d3
 );
 
@@ -71,7 +72,8 @@ $font-sizes: (
 	h2: 1.875rem,
 	h3: 1.25rem,
 	h4: 1rem,
-	logo: 2.375rem
+	logo: 2.375rem,
+	skill: 11px
 );
 
 @function font-size($key) {
@@ -83,7 +85,8 @@ $font-sizes: (
 }
 
 $borders: (
-	light-gray: 2px solid color(input-border)
+	light-gray: 2px solid color(input-border),
+	logo: 5px solid color(logo-border)
 );
 
 @function border($key) {
@@ -94,7 +97,23 @@ $borders: (
 	@return null;
 }
 
+$holders: (
+	main: 71.125rem,
+	title: 46.875rem
+);
+
+@function holder($key) {
+	@if map-has-key($holders, $key) {
+	  @return map-get($holders, $key);
+	}
+	@warn "Unknown `#{$key}` in $borders";
+	@return null;
+}
+
+// box shadow:
 $materialBorder: 0 10px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.25);
+
+
 // usage: @include transition(opacity visibility);
 @mixin transition (
 	$properties: all,

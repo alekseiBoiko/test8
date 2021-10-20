@@ -1,0 +1,7 @@
+.partners {
+    &-list {
+        padding: 5rem 0;
+
+        @include flex(unset,unset,space-between,unset);
+    }
+}

@@ -21,20 +21,20 @@ mixin clientsReview (list = [])
     ul.review-list
         each i in list
             li.review-item
-                .review-img-holder  
-                    .review-information-holder 
-                        p.review__text #{i.review}
-                        .review__raty 
-                        .review-author-holder   
-                            span.review-author-name #{i.name}
-                            span.review-author-position #{i.position}
+                .review-information-holder 
+                    .review-img-holder  
+                    p.review__text #{i.review}
+                    .review__raty 
+                    .review-author-holder   
+                        b.review__author-name #{i.name},
+                        i.review__author-position #{i.position}
 
 section.clients-section
-    .section-width-holder
+    .section-width-holder_padding-bottom 
         .section-name-holder
             h1.section__title
                 span clients
                 span said
             p.section__text Lorem ipsum dolor sit amet consectetur adipisicing elit Maiores fuga provident Libero.
-        +clientsReview
+        +clientsReview(clientsReview)
          

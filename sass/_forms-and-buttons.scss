@@ -1,5 +1,28 @@
 
 .btn {
+	border: border(light-gray);
+	border-radius: 3.5rem;
+	padding: 1rem;
+	color: color(btn-color);
+	background-color: color(btn-bg);
+
+	@include transition(box-shadow);
+
+	&:hover {
+		box-shadow: $materialBorder;
+	}
+
+	&_process {
+		position: absolute;
+		bottom: -1.75rem;
+		left: 50%;
+		right: 0;
+		transform: translateX(-50%);
+		width: 86%;
+
+		@extend .btn;
+	}
+
 	&_menu {
 		position: relative;
 		width: 50px;
@@ -64,25 +87,6 @@
 					transform-origin: center;
 				}
 			}
-		}
-	}
-
-	&_main {
-		position: absolute;
-		bottom: -1.75rem;
-		left: 50%;
-		right: 0;
-		transform: translateX(-50%);
-		border: border(light-gray);
-		border-radius: 3.5rem;
-		padding: 1rem;
-		color: color(btn-color);
-		width: 86%;
-		
-		@include transition(box-shadow);
-		
-	    &:hover {
-			box-shadow: $materialBorder;
 		}
 	}
 
