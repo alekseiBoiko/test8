@@ -38,6 +38,7 @@
 
         &__text {
             margin-bottom: 2rem;
+            line-height: 1.5;
         }
     }
 
@@ -45,5 +46,35 @@
         height: 100%;
 
         @include flex(unset,unset,center,center);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .services {
+        &-description {
+            &-holder {
+                width: 50%;
+                padding: 0 3rem;
+            }
+        }
+
+        &-img-holder {
+            width: 35%;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .services {
+        &-description {
+            &-holder {
+                width: 100%;
+                padding: 0 1rem;
+            }
+        }
+
+        &-img-holder {
+            display: none;
+        }
     }
 }

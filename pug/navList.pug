@@ -1,0 +1,7 @@
+- var headerNavList = ['process','works','services','team','clients'];
+
+mixin navList(navClass, navList = [])
+    ul(class=`${navClass}-nav-list`)
+        each i in navList
+            li(class=`${navClass}-nav-item`)
+                a(href=`#${i}`, class=`${navClass}-nav__link`) #{i}

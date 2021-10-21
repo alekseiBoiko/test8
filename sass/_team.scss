@@ -97,3 +97,29 @@
         }
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .team {
+        &-list {
+            margin-right: -0.5rem;
+        }
+
+        &-item {
+            min-width: 30%;
+            height: 20rem;
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .team {
+        &-list {
+            justify-content: center;
+        }
+
+        &-item {
+            min-width: 80%;
+        }
+    }
+}

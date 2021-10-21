@@ -3,26 +3,27 @@ $(function(){
   changeHamburger();
   initRaty('.review__raty');
   drawSlider();
+  scrollButtons();
   }
 );
 
 function fixHeader() {
   let header = $('.header'), //хедер
       headerHeight = header.innerHeight(), // высота хедера
-      content = $('.welcome'); //контентная часть
+      content = $('.welcome-section'); //контентная часть
 
   $(window).scroll(function() { //событие скролла страницы
     let windowScroll = $(this).scrollTop(); //скроллим от верха страницы
     if (windowScroll >= headerHeight) { //условие в котором смотрим просклорили страницу на высоту хедера или нет, если да:
       header.addClass('header_fixed'); //довешиваем класс на хедер
       content.css({ //довешиваем отступ на контент
-        'padding-top': headerHeight
+        'margin-top': headerHeight
       })
     } 
     else { //в противном случае все удаляем
       header.removeClass('header_fixed');
       content.css({
-        'padding-top': '0'
+        'margin-top': '0'
       })
     }
   })
@@ -32,9 +33,32 @@ function changeHamburger() {
     $('.btn_menu').on('click', function(e) {
       e.preventDefault();
       $(this).toggleClass('btn_menu_active');
-      // $('.nav-block').toggleClass('nav_active');
+      $('.header-nav-list').toggleClass('header-nav-list_active');
     })
 };
+
+function scrollButtons() {
+  'use strict;';
+  let window = $('body,html'),
+      headerHeight = $('.header').innerHeight();
+      // aboutHolder = $('.about').offset().top,
+      // workHolder = $('.works').offset().top;
+
+  $('.logo').on('click', function (event) {
+    event.preventDefault();
+    window.animate(       {
+        scrollTop: window.offset().top
+      }, 600
+    );
+  });
+
+  $(".header-nav-list").on("click","a", function (event) {
+    event.preventDefault();
+    let navId = $(this).attr('href'),
+        blockTop = $(navId).offset().top;            
+    window.animate({scrollTop: blockTop - headerHeight}, 600);
+  });
+}; 
 
 
 function initRaty(starClass) {
@@ -62,21 +86,21 @@ function drawSlider() {
         {
           breakpoint: 1200,
           settings: {
-            slidesToShow: 4,
-            slidesToScroll: 2,
+            slidesToShow: 2,
+            slidesToScroll: 1,
           }
         },
         {
           breakpoint: 768,
           settings: {
-            slidesToShow: 3,
+            slidesToShow: 2,
             slidesToScroll: 1
           }
         },
         {
-          breakpoint: 576,
+          breakpoint: 480,
           settings: {
-            slidesToShow: 2,
+            slidesToShow: 1,
             slidesToScroll: 1
           }
         }

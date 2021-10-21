@@ -6,7 +6,7 @@
     &-item {
         position: relative;
         width: 23.5%;
-        padding: 3.4375rem 2rem;
+        padding: 3rem 2rem;
         color: color(process-item-color);
 
         @include flex(unset,column,flex-start,center);
@@ -26,5 +26,23 @@
         background-color: color(process-bg_#{$i});
 
         @extend .process-item;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .process {
+        &-item {
+            width: 48.5%;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .process {
+        &-item {
+            width: 100%;
+        }
     }
 }

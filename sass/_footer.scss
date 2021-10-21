@@ -8,6 +8,18 @@
     &-bottom-holder {
         margin-top: 3rem;
 
-        @include flex(unset, unset, unset, center);
+        @include flex(wrap, unset, center, center);
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .footer {
+        &-bottom-holder {
+            margin: 1rem 0;
+        }
+
+        &__text {
+            margin-top: 1rem;
+        }
     }
 }

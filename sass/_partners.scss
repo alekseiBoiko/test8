@@ -2,6 +2,28 @@
     &-list {
         padding: 5rem 0;
 
-        @include flex(unset,unset,space-between,unset);
+        @include flex(wrap,unset,space-between,unset);
+    }
+
+    &-item {
+        width: 15%;
+
+        &:hover {
+            .partners__img {
+                opacity: 0.75;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .partners {
+        &-list {
+            padding: 1rem 0;
+        }
+
+        &-item {
+            width: 30%;
+        }
     }
 }

@@ -68,7 +68,11 @@ $fonts: (
 }
 
 $font-sizes: (
+	main: 16px,
+	portrait-tablet: 14px,
+	phone: 12px,
 	h1: 3.125rem,
+	h1_phone: 2rem,
 	h2: 1.875rem,
 	h3: 1.25rem,
 	h4: 1rem,
@@ -99,7 +103,11 @@ $borders: (
 
 $holders: (
 	main: 71.125rem,
-	title: 46.875rem
+	main_portrait-tablet: 50rem,
+	main_phone: 90%,
+	title: 46.875rem,
+	title_portrait-tablet: 36rem,
+	title_phone: 70%
 );
 
 @function holder($key) {

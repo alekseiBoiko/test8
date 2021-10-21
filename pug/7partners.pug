@@ -3,4 +3,5 @@ section.section_gray
         ul.partners-list 
             - for (var p=1;p<7;p++)
                 li.partners-item
-                    img.partners__img(src=`images/partner${p}.png` alt=`partner${p}`)
+                    a.partners-link(href=`partners${p}.html`)
+                        img.partners__img(src=`images/partner${p}.png` alt=`partner${p}`)

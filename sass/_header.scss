@@ -3,26 +3,72 @@
     color: color(header-color);
     background-color: color(header-bg);
 
-    .header-holder {
+    &-holder {
+        position: relative;
         width: 100%;
         min-height: 7rem;
         padding: 0.5rem 0;
 
         @include flex(unset, unset, space-between, center);
     }
-}
 
-.header_fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background-color: color(header-bg_fixed);
-    box-shadow: $materialBorder;
+    &_fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: color(header-bg_fixed);
+        box-shadow: $materialBorder;
+    }
+
+    &-nav {
+        &-list {
+            position: absolute;
+            top: -130%;
+            right: 0;
+            height: auto;
+            margin-left: 0;
+            opacity: 0;
+            transform: translateX(-50%);
+
+            @include flex(unset,column,center, flex-start);
+            @include transition(top);
+
+            &_active {
+                top: 10rem;
+                z-index: 10;
+                opacity: 1;
+            }
+        }
+
+        &-item {
+            min-width: 7rem;
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.5rem;
+            color: color(btn-input-color);
+            text-align: center;
+            background-color: color(btn-input-bg);
+            border: none;
+            border-radius: 3.5rem;
+            box-shadow: 0 0 0 3px white;
+
+            @include transition(color background-color box-shadow);
+
+            &:hover {
+                color: color(body-color);
+                background-color: white;
+                box-shadow: 0 0 0 3px $orange;
+            }
+        }
+
+        &__link {
+            width: 100%;
+        }
+    }
 }
 
 .logo {
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 1rem;
     font-size: font-size(logo);
     font-weight: 600;
     color: color(logo-color);

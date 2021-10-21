@@ -43,6 +43,8 @@
         height: 1rem;
         margin: 1rem 0;
 
+        @include flex(unset,unset,center,center);
+
         img {
             object-fit: contain;
             height: 100%;
@@ -51,5 +53,29 @@
 
     &__author-position {
         font-style: italic;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .review {
+        &-item {
+            height: 22rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .review {
+        &-item {
+            width: 34rem !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .review {
+        &-item {
+            width: 22rem !important;
+        }
     }
 }
