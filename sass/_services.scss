@@ -61,6 +61,10 @@
         &-img-holder {
             width: 35%;
         }
+
+        &__img {
+            @extend %img_contain;
+        }
     }
 }
 

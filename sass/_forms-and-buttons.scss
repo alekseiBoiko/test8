@@ -132,10 +132,10 @@
 		border-bottom: border(light-gray);
 		padding-top: 3rem;
 
-		@include transition(box-shadow);
+		@include transition(border-bottom);
 
 		&:hover {
-			box-shadow: $materialBorder;
+			border-bottom: border(orange);
 		}
 	}
 }

@@ -6,13 +6,15 @@
     }
 
     &-item {
-        width: 15%;
-
         &:hover {
             .partners__img {
                 opacity: 0.75;
             }
         }
+    }
+
+    &-link {
+        @include flex(unset,unset,center,unset);
     }
 }
 
@@ -20,10 +22,12 @@
     .partners {
         &-list {
             padding: 1rem 0;
+            margin-bottom: -1.5rem;
         }
 
         &-item {
-            width: 30%;
+            width: block-width(3);
+            margin-bottom: 1.5rem;
         }
     }
 }

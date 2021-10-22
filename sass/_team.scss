@@ -7,7 +7,7 @@
 
     &-item {
         position: relative;
-        min-width: 30%;
+        min-width: block-width(3);
         height: 27.875rem;
         padding-bottom: 1rem;
         margin: 0 2rem 2rem 0;
@@ -16,12 +16,27 @@
         @include flex(unset, column, flex-end, center);
         @include transition(background-color);
 
+        &-info {
+            position: absolute;
+            right: 0;
+            bottom: -0.75rem;
+            left: 50%;
+            width: 86%;
+            padding: 1rem;
+            background-color: color(body-bg);
+            box-shadow: $materialBorder;
+            transform: translateX(-50%);
+        }
+
         &:hover {
             background-color: color(imgHolder-bg_hovered);
 
             .team-item {
                 &-info {
-                    position: unset;
+                    position: relative;
+                    top: unset;
+                    right: unset;
+                    bottom: 0;
                     left: 0;
                     width: 100%;
                     background-color: transparent;
@@ -55,18 +70,6 @@
                 border-image-source: linear-gradient(to right, color(imgHolder-bg) 80%, color(body-color) 20%);
                 border-image-slice: 1;
             }
-        }
-
-        &-info {
-            position: absolute;
-            right: 0;
-            bottom: -0.75rem;
-            left: 50%;
-            width: 86%;
-            padding: 1rem;
-            background-color: color(body-bg);
-            box-shadow: $materialBorder;
-            transform: translateX(-50%);
         }
 
         &__name, &__position {
@@ -105,7 +108,6 @@
         }
 
         &-item {
-            min-width: 30%;
             height: 20rem;
             margin-right: 0.5rem;
         }

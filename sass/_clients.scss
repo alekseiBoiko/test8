@@ -9,6 +9,7 @@
 
     &-information-holder {
         position: relative;
+        width: 100%;
         padding: 5.625rem 3.375rem 2.375rem;
         border: border(light-gray);
 
@@ -22,14 +23,14 @@
 
     &-img-holder {
         position: absolute;
-        z-index: 1;
-        background-color: color(body-bg);
         top: -3.1rem;
         right: 0;
-		bottom: 0;
 		left: 50%;
+		bottom: 0;
+        z-index: 1;
         width: 6.2rem;
         height: 6.2rem;
+        background-color: color(body-bg);
         border: border(light-gray);
         border-radius: 50%;
 		transform: translateX(-50%);
@@ -37,6 +38,7 @@
 
     &__text {
         text-align: center;
+        max-width: 100%;
     }
 
     &__raty {

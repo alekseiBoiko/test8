@@ -14,12 +14,12 @@ $socialColors: (
 $colors: (
 	body-bg: white,
 	body-color: #626262,
-	header-bg: none,
+	header-bg: transparent,
 	header-color: inherit,
 	header-bg_fixed: #fbfbfb,
 	burger-bg: #706b73,
 	burger-bg_hovered: $orange,
-	logo-bg: none,
+	logo-bg: transparent,
 	logo-color: inherit,
 	logo-color_hovered: $orange,
 	logo-border: #706b73,
@@ -90,7 +90,8 @@ $font-sizes: (
 
 $borders: (
 	light-gray: 2px solid color(input-border),
-	logo: 5px solid color(logo-border)
+	logo: 5px solid color(logo-border),
+	orange: 2px solid $orange
 );
 
 @function border($key) {
@@ -121,6 +122,21 @@ $holders: (
 // box shadow:
 $materialBorder: 0 10px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.25);
 
+// BLOCK WIDTH
+
+$blockWidth: (
+	2: 48%,
+	3: 30.5%,
+	4: 23.5%,
+);
+
+@function block-width($key) {
+	@if map-has-key($blockWidth, $key) {
+	  @return map-get($blockWidth, $key);
+	}
+	@warn "Unknown `#{$key}` in $blockWidth";
+	@return null;
+}
 
 // usage: @include transition(opacity visibility);
 @mixin transition (
@@ -142,22 +158,22 @@ $materialBorder: 0 10px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.25);
 }
 
 // usage: @include flex(wrap, null, center, center);
-@mixin flex($wrap: unset, $direction: normal, $justify: normal, $align: normal) {
+@mixin flex($wrap: unset, $direction: unset, $justify: unset, $align: unset) {
 	display: flex;
 	@include flex-wrap($wrap);
   	@include flex-direction($direction);
   	@include flex-justify($justify);
   	@include flex-align($align);
 }
-@mixin flex-direction($direction: normal) {
+@mixin flex-direction($direction: unset) {
  flex-direction: $direction;
 }
-@mixin flex-align($align: normal) {
+@mixin flex-align($align: unset) {
  align-items: $align;
 }
-@mixin flex-justify($justify: normal) {
+@mixin flex-justify($justify: unset) {
 	justify-content: $justify;
 }
-@mixin flex-wrap($wrap: normal) {
+@mixin flex-wrap($wrap: unset) {
 	flex-wrap: $wrap;
 }
